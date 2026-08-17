@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPC</title>
+    </head>
+    <body>
+        <P>Rock Paper Scissors</P>
+        <button
+            onclick="
+            rmove=Math.random();
+            if (rmove<1/3)
+            {
+                cmove='Rock';
+                res='Tie';
+            }
+            else if(rmove<2/3)
+            {
+                cmove='Paper'
+                res='Lose';
+            }
+            else
+            {
+                cmove='Scissors';
+                res='Win';
+            }
+            alert('You picked : Rock\nComp picked : '+cmove+'\nResult is : '+res);
+            "
+        >Rock</button>
+
+        <button
+            onclick="
+            rmove=Math.random();
+            if (rmove<1/3)
+            {
+                cmove='Rock';
+                res='Win';
+            }
+            else if(rmove<2/3)
+            {
+                cmove='Paper'
+                res='Tie';
+            }
+            else
+            {
+                cmove='Scissors';
+                res='Lose';
+            }
+            alert('You picked : Paper\nComp picked : '+cmove+'\nResult is : '+res);
+            "
+        >Paper</button>
+        
+        <button
+            onclick="
+            rmove=Math.random();
+            if (rmove<1/3)
+            {
+                cmove='Rock';
+                res='Lose';
+            }
+            else if(rmove<2/3)
+            {
+                cmove='Paper'
+                res='Win';
+            }
+            else
+            {
+                cmove='Scissors';
+                res='Tie';
+            }
+            alert('You picked : Scissors\nComp picked : '+cmove+'\nResult is : '+res);
+            "
+        >Scissors</button>
+
+        <script>
+            let rmove=0;
+            let cmove='';
+            let res='';
+        </script>
+</html>
