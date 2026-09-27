@@ -18,6 +18,9 @@
             play('SCISSORS');
             "
         >SCISSORS</button>
+        <br>
+        <p class="show"></p>
+        <br>
         <button onclick="reset();">RESET</button>
     </body>
     <script>
@@ -77,8 +80,9 @@
                 score.Tie+=1;
             }
             localStorage.setItem('score',JSON.stringify(score));
-            alert('You picked '+pmove+' Computer picked '+cmove+' RESULT : '+res+`
-            WINS : ${score.Wins} LOSES : ${score.Loses} Ties : ${score.Tie}`);
+            updatescore(0,pmove);
+            //alert('You picked '+pmove+' Computer picked '+cmove+' RESULT : '+res+`
+            //WINS : ${score.Wins} LOSES : ${score.Loses} Ties : ${score.Tie}`);
         }
         function pickmove(){
             rmove=Math.random();
@@ -100,7 +104,19 @@
             score.Loses=0;
             score.Tie=0;
             localStorage.removeItem('score');
-            alert(`WINS : ${score.Wins} LOSES : ${score.Loses} Ties : ${score.Tie}`);
+            updatescore(1,0);
+            //alert(`WINS : ${score.Wins} LOSES : ${score.Loses} Ties : ${score.Tie}`);
+        }
+        function updatescore(a,pmove)
+        {
+            if(a===0)
+            {
+                document.querySelector('.show').innerHTML='You picked '+pmove+`
+Computer picked `+cmove+`
+RESULT : `+res+`<br>WINS : ${score.Wins} LOSES : ${score.Loses} Ties : ${score.Tie}`;
+            }
+            else
+                document.querySelector('.show').innerHTML=`WINS : ${score.Wins} LOSES : ${score.Loses} Ties : ${score.Tie}`;
         }
     </script>
 </html>
